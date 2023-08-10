@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon"
+          href="http://192.168.1.249:8080/VideoSync/assets/favicon.png">
+    <title>Login</title>
+    <script src="http://192.168.1.249:8080/VideoSync/assets/jquery-3.6.0.js">
+    </script>
+    <script src="http://192.168.1.249:8080/VideoSync/login/login.js">
+    </script>
+    <link rel="stylesheet"
+          href="http://192.168.1.249:8080/VideoSync/assets/videosync.css">
+</head>
+
+<body>
+    <div>
+        <img class='logo'
+             src='http://192.168.1.249:8080/VideoSync/assets/logo.png'/>
+    </div>
+    <div>
+        <form id="userForm" method="POST">
+        <label for="username">Username </label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password </label>
+        <input type="password" id="password" name="password">
+        <br><br>
+        </form>
+    </div>
+    <div>
+        <button type="button" onclick="postActiveUser()">Login</button>
+        <button type="button" onclick="getCreateUser()">Create User
+        </button>
+    </div>
+</body>
+
+</html>

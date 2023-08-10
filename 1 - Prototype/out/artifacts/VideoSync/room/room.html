@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Room</title>
+    <link rel="icon"
+          href="http://192.168.1.249:8080/VideoSync/assets/favicon.png">
+    <script src="http://192.168.1.249:8080/VideoSync/assets/jquery-3.6.0.js">
+        </script>
+    <script src="http://192.168.1.249:8080/VideoSync/room/room.js">
+        </script>
+    <link rel="stylesheet"
+          href="http://192.168.1.249:8080/VideoSync/assets/videosync.css">
+</head>
+
+<body id="body">
+    <table>
+        <tr>
+            <td>
+                <img class='logo'
+                     src='http://192.168.1.249:8080/VideoSync/assets/logo.png'/>
+            </td>
+            <td style="text-align: right; vertical-align: middle">
+                <input class="users" id="usersButton" onclick="onUsersButton()"
+                       type="image" src=
+                       'http://192.168.1.249:8080/VideoSync/assets/users.png'/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id='roomCode'>Room Code: </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <video id='video' width='384' height='216'
+                    onplay='putVideoStatus(
+                        "play", document.getElementById("video").currentTime)'
+                    onpause='putVideoStatus(
+                        "pause", document.getElementById("video").currentTime)'
+                    muted=true>
+                    <source id='source'/>
+                </video><br/>
+                <div id="videoButtons">
+                    <button id='playButton' type='button' onclick=
+                        'document.getElementById("video").play()'>Play</button>
+                    <button id='pauseButton' type='button' onclick=
+                        'document.getElementById("video").pause()'>Pause</button>
+                    <button type='button' onclick='setVideoVolume(-.1)'>Vol-</button>
+                    <button type='button' onclick='setVideoVolume(+.1)'>Vol+</button>
+                    <button id="removeButton"
+                        type='button' onclick='deleteRoomVideo()'>Remove</button><br>
+                    <input type="range" min="0" max="100" value="0"
+                           oninput='setSliderInput()' id="slider">
+                </div>
+                <form role='form' id='fileForm' enctype='multipart/form-data'>
+                    <input id='file' type='file' name='file'/>
+                    <button type='button' onclick='postVideoFile()'>Upload</button>
+                </form>
+            </td>
+            <td>
+                <input id='message' type='text'/>
+                <button onclick='postVideoMessage()'>Send</button><br/>
+                <div class='messagebox' id='output'></div>
+            </td>
+        </tr>
+    </table>
+    <div id="usersBox" class="usersBox">
+        <div class="usersList" id="usersList">
+            <span onclick="onSpanButton()">&times;</span>
+        </div>
+    </div>
+</body>
+
+</html>

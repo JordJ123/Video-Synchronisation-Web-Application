@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon"
+          href="http://192.168.1.249:8080/VideoSync/assets/favicon.png">
+    <title>Home</title>
+    <script src="http://192.168.1.249:8080/VideoSync/assets/jquery-3.6.0.js">
+        </script>
+    <script src="http://192.168.1.249:8080/VideoSync/home/home.js">
+        </script>
+    <link rel="stylesheet"
+          href="http://192.168.1.249:8080/VideoSync/assets/videosync.css">
+</head>
+<body>
+    <img class='logo'
+         src='http://192.168.1.249:8080/VideoSync/assets/logo.png'/>
+    <form id="roomCodeForm" method="POST">
+        <label for="roomCode">Room Code </label>
+        <input type="roomCode" id="roomCode" name="roomCode">
+        <br><br>
+    </form>
+    <button type="button" onclick="postRoomUser()">Login</button>
+</body>
+</html>
